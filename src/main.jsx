@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
-
+import Login from "./pages/Login";
 import Home from "./pages/Home";
 // import App from './App.jsx'
 import "./index.css";
@@ -22,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/register" element={<Register></Register>} />
         <Route path="/" element={<Home></Home>} />
+        <Route path="/login" element={<Login></Login>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
