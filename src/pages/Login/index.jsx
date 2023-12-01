@@ -5,15 +5,17 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { LoginUser } from "../../apicalls/users";
+import { useDispatch } from "react-redux";
+import { HideLoading, ShowLoading } from "../../redux/loadersSlice";
 
 function Login() {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const onFinish = async (values) => {
     try {
-      // dispatch(ShowLoading())
+      dispatch(ShowLoading());
       const response = await LoginUser(values);
-      // dispatch(HideLoading())
+      dispatch(HideLoading());
       if (response.success) {
         message.success(response.message);
         localStorage.setItem("token", response.data);
@@ -23,7 +25,7 @@ function Login() {
         message.error(response.message);
       }
     } catch (error) {
-      // dispatch(HideLoading())
+      dispatch(HideLoading());
       message.error(error.message);
     }
   };

@@ -22,6 +22,11 @@ import { Provider } from "react-redux";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
+      {loader && (
+        <div className="loader-parent">
+          <div className="loader"></div>
+        </div>
+      )}
       <BrowserRouter>
         <Routes>
           <Route path="/register" element={<Register></Register>} />

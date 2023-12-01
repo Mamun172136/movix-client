@@ -75,18 +75,20 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { RegisterUser } from "../../apicalls/users";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { HideLoading, ShowLoading } from "../../redux/loadersSlice";
 // import { useDispatch } from "react-redux";
 // import { HideLoading, ShowLoading } from "../../redux/loadersSlice";
 
 function Register() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const onFinish = async (values) => {
     try {
-      // dispatch(ShowLoading());
+      dispatch(ShowLoading());
       console.log(values);
       const response = await RegisterUser(values);
-      // dispatch(HideLoading());
+      dispatch(HideLoading());
       if (response.success) {
         message.success(response.message);
         navigate("/login");
@@ -94,7 +96,7 @@ function Register() {
         message.error(response.message);
       }
     } catch (error) {
-      // dispatch(HideLoading());
+      dispatch(HideLoading());
       console.log("hello");
       message.error(error.message);
     }
