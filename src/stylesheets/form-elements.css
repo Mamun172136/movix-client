@@ -1,29 +1,24 @@
 input,
-select,
-textarea {
-  border: 1px solid rgb(86, 86, 86);
-  padding: 8px 10px;
+textarea,
+select {
+  height: 40px;
+  padding-left: 15px;
+  border: 1px solid #8a8a8a;
   width: 100%;
 }
 
 input:focus,
-select:focus,
-textarea:focus {
-  border: 1px solid rgb(34, 34, 34);
+textarea:focus,
+select:focus {
   outline: none;
+  border: 1px solid #373737;
 }
 
-.primary-contained-btn {
-  background-color: var(--primary);
-  color: white;
-  padding: 8px 20px;
-  text-transform: uppercase;
+textarea {
+  min-height: 100px;
+  padding: 15px;
 }
 
-.primary-outlined-btn {
-  background-color: white;
-  color: var(--primary);
-  padding: 8px 20px;
-  text-transform: uppercase;
-  border: 1px solid var(--primary);
+.ant-form-item {
+  margin-bottom: 10px;
 }
