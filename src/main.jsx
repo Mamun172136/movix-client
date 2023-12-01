@@ -65,6 +65,7 @@ import "./stylesheets/size.css";
 import "./stylesheets/text-elements.css";
 import "./stylesheets/theme.css";
 import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
 
 const App = () => (
   <Provider store={store}>
@@ -84,6 +85,14 @@ const App = () => (
             element={
               <Provider store={store}>
                 <Profile></Profile>
+              </Provider>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <Provider store={store}>
+                <Admin></Admin>
               </Provider>
             }
           />
