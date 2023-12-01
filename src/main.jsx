@@ -15,15 +15,27 @@ import "./stylesheets/layout.css";
 import "./stylesheets/size.css";
 import "./stylesheets/text-elements.css";
 import "./stylesheets/theme.css";
+import store from "./redux/store";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/register" element={<Register></Register>} />
-        <Route path="/" element={<Home></Home>} />
-        <Route path="/login" element={<Login></Login>} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/register" element={<Register></Register>} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home></Home>
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login></Login>} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
