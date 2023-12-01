@@ -1,5 +1,6 @@
 import { Tabs } from "antd";
 import React from "react";
+import MoviesList from "./MoviesList";
 
 const Admin = () => {
   return (
@@ -7,7 +8,7 @@ const Admin = () => {
       <h2>admin</h2>
       <Tabs defaultActiveKey="1">
         <Tabs.TabPane tab="Movies" key="1">
-          movies
+          <MoviesList></MoviesList>
         </Tabs.TabPane>
 
         <Tabs.TabPane tab="Theatres" key="2">

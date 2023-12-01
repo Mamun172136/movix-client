@@ -92,7 +92,10 @@ const App = () => (
             path="/admin"
             element={
               <Provider store={store}>
-                <Admin></Admin>
+                <ProtectedRoute>
+                  {" "}
+                  <Admin></Admin>
+                </ProtectedRoute>
               </Provider>
             }
           />
