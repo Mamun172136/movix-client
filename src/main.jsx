@@ -85,7 +85,10 @@ const App = () => (
             path="/profile"
             element={
               <Provider store={store}>
-                <Profile></Profile>
+                <ProtectedRoute>
+                  {" "}
+                  <Profile></Profile>
+                </ProtectedRoute>
               </Provider>
             }
           />
