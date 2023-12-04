@@ -24,3 +24,16 @@ export const GetAllTheatres = async () => {
     return error.response;
   }
 };
+
+// update theatre
+export const UpdateTheatre = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "http://localhost:5000/api/theatres/update-theatre",
+      payload
+    );
+    return response.data;
+  } catch (error) {
+    return error.response;
+  }
+};
