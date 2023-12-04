@@ -1,7 +1,7 @@
 import React from "react";
 
-const TheatersList = () => {
+const TheatresList = () => {
   return <div>theater</div>;
 };
 
-export default TheatersList;
+export default TheatresList;
