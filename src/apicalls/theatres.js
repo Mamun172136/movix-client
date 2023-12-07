@@ -68,7 +68,7 @@ export const DeleteTheatre = async (payload) => {
 export const AddShow = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "/api/theatres/add-show",
+      "http://localhost:5000/api/theatres/add-show",
       payload
     );
     return response.data;
@@ -81,7 +81,20 @@ export const AddShow = async (payload) => {
 export const GetAllShowsByTheatre = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "/api/theatres/get-all-shows-by-theatre",
+      "http://localhost:5000/api/theatres/get-all-shows-by-theatre",
+      payload
+    );
+    return response.data;
+  } catch (error) {
+    return error.response;
+  }
+};
+
+// delete show
+export const DeleteShow = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/api/theatres/delete-show",
       payload
     );
     return response.data;
