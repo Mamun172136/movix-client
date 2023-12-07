@@ -102,6 +102,7 @@ export const DeleteShow = async (payload) => {
     return error.response;
   }
 };
+
 // get all theatres for a movie
 export const GetAllTheatresByMovie = async (payload) => {
   try {
