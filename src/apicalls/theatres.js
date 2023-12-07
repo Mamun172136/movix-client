@@ -29,7 +29,7 @@ export const GetAllTheatres = async () => {
 export const GetAllTheatresByOwner = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "/api/theatres/get-all-theatres-by-owner",
+      "http://localhost:5000/api/theatres/get-all-theatres-by-owner",
       payload
     );
     return response.data;
@@ -55,7 +55,20 @@ export const UpdateTheatre = async (payload) => {
 export const DeleteTheatre = async (payload) => {
   try {
     const response = await axiosInstance.post(
-      "/api/theatres/delete-theatre",
+      "http://localhost:5000/api/theatres/delete-theatre",
+      payload
+    );
+    return response.data;
+  } catch (error) {
+    return error.response;
+  }
+};
+
+// add show
+export const AddShow = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/api/theatres/add-show",
       payload
     );
     return response.data;

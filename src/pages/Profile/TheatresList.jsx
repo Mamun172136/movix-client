@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import TheatreForm from "./TheatreForm";
+
 import {
   DeleteTheatre,
   GetAllTheatres,
@@ -152,6 +153,14 @@ function TheatresList() {
           selectedTheatre={selectedTheatre}
           setSelectedTheatre={setSelectedTheatre}
           getData={getData}
+        />
+      )}
+
+      {openShowsModal && (
+        <Shows
+          openShowsModal={openShowsModal}
+          setOpenShowsModal={setOpenShowsModal}
+          theatre={selectedTheatre}
         />
       )}
     </div>
