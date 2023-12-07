@@ -76,3 +76,16 @@ export const AddShow = async (payload) => {
     return error.response;
   }
 };
+
+// get all shows
+export const GetAllShowsByTheatre = async (payload) => {
+  try {
+    const response = await axiosInstance.post(
+      "/api/theatres/get-all-shows-by-theatre",
+      payload
+    );
+    return response.data;
+  } catch (error) {
+    return error.response;
+  }
+};
